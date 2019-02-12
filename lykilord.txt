@@ -1,0 +1,1 @@
+{'jónas': 'jarðaber', 'haraldur': 'kók', 'konni': 'kaffi', 'jóna': 'jól', 'palli': 'páfagaukur', 'annar': 'ananas', 'elvar': 'epli', 'eymar': 'ekkert', 'anna': 'akkeri', 'kristin': 'kennsla', 'daniel': 'dropsteinn'}
