@@ -38,6 +38,8 @@ def remove_empty(l):
 def reverse_words(words):
     # +++your code here+++
     return
+
+
 # D. duplicates
 # Hannið fall duplicates(s)sem tekur við lista af tölum eða strengjum
 # og skilar lista með öllu sem kemur fyrir tvisvar í listanum(s)
