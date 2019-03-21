@@ -3,12 +3,22 @@
 #2019/02/19
 
 import csv
-from klasi import Verkalydsfelag
+import klasi
 
+verkalydsfelag=[]
 def opnaskra():
-    pass
+    with open("verkalydsfelga.csv","r",newline="",encoding="utf-8") as file:
+        reader=csv.reader(file,delimiter=";")
+        for row in reader:
+            print(row)
+            hlutur = klasi.Verkalydsfelag(row[0], row[1], row[2], row[3])
+            verkalydsfelag.append(hlutur)
+
 def skrifaUt():
-    pass
+    with open("verkalydsfelga.csv","w",newline="",encoding="utf-8") as file:
+        writer=csv.writer(file,delimiter=",")
+        for x in verkalydsfelag:
+            writer.writerow([x.n,x.f,x.l,x.k])
 def nyrMedlimur():
     pass
 def eydaMedlimi():
@@ -37,3 +47,26 @@ while on ==1:
     print("10 hætta")
     val = int(input("veldu milli 1-9 10 til að hætta"))
 
+    if val ==1:
+        opnaskra()
+
+    elif val == 2:
+        pass
+    elif val == 3:
+        pass
+    elif val == 4:
+        pass
+    elif val == 5:
+        pass
+    elif val == 6:
+        pass
+    elif val == 7:
+        pass
+    elif val == 8:
+        pass
+    elif val == 9:
+        pass
+    elif val == 10:
+        on = 0
+    else:
+        print("verður að velja milli 1-9")
