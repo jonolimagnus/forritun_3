@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="888b7585-8bfc-4bef-9dc0-312d8647a0ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/TIMAVERKEFNI_1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TIMAVERK_2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/skil_2_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/undirbuningur_i_timaverk1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/æfing_2C_try_excpect_time.py" afterDir="false" />
       <change beforePath="H:/.bash_history" beforeDir="false" afterPath="H:/.bash_history" afterDir="false" />
       <change beforePath="H:/README.md" beforeDir="false" afterPath="H:/README.md" afterDir="false" />
       <change beforePath="H:/firrtun 1/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="H:/firrtun 1/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
@@ -15,11 +10,8 @@
       <change beforePath="H:/firrtun 1/.idea/workspace.xml" beforeDir="false" afterPath="H:/firrtun 1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="H:/forittun 2/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="H:/forittun 2/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="H:/forittun 2/.idea/workspace.xml" beforeDir="false" afterPath="H:/forittun 2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/forritun 3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/forritun 3.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pygame_files/skilaverk_5_pyg_teningar.py" beforeDir="false" afterPath="$PROJECT_DIR$/pygame_files/skilaverk_5_pyg_teningar.py" afterDir="false" />
       <change beforePath="H:/gagnasöfn_2/VERK_1.sql" beforeDir="false" afterPath="H:/gagnasöfn_2/VERK_1.sql" afterDir="false" />
       <change beforePath="H:/vefhönnun/vsh3/hello_flask/.vscode/settings.json" beforeDir="false" afterPath="H:/vefhönnun/vsh3/hello_flask/.vscode/settings.json" afterDir="false" />
       <change beforePath="H:/vefhönnun/vsh3/hello_flask/env/Scripts/Activate.ps1" beforeDir="false" />
@@ -127,7 +119,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="25" />
-          <entry key="py" value="37562" />
+          <entry key="py" value="37599" />
           <entry key="pyi" value="1287" />
           <entry key="txt" value="1" />
         </counts>
@@ -135,7 +127,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="26" />
-          <entry key="Python" value="37562" />
+          <entry key="Python" value="37599" />
           <entry key="PythonStub" value="1287" />
         </counts>
       </usages-collector>
@@ -191,11 +183,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pygame_files/skilaverk_5_pyg_teningar.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
+            <state relative-caret-position="544">
+              <caret line="140" lean-forward="true" selection-start-line="140" selection-end-line="140" />
               <folding>
                 <element signature="e#26#39#0" expanded="true" />
-                <marker date="1554456479579" expanded="true" signature="2294:2782" ph="..." />
+                <marker date="1554457205440" expanded="true" signature="2294:2782" ph="..." />
               </folding>
             </state>
           </provider>
@@ -670,11 +662,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pygame_files/skilaverk_5_pyg_teningar.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
+        <state relative-caret-position="544">
+          <caret line="140" lean-forward="true" selection-start-line="140" selection-end-line="140" />
           <folding>
             <element signature="e#26#39#0" expanded="true" />
-            <marker date="1554456479579" expanded="true" signature="2294:2782" ph="..." />
+            <marker date="1554457205440" expanded="true" signature="2294:2782" ph="..." />
           </folding>
         </state>
       </provider>

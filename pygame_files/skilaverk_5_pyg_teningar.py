@@ -116,8 +116,6 @@ while running:
             teljari +=1
             xhnit=30
             yhnit=30
-            #rugla teningum með random
-            #teningalisti.clear()#hreynsat listann
             for x in range(6):
                 if x not in listi:#ef búið er að frysta tening þá á ekki að setja nýja tölu í stað
                     ten=templisti[random.randint(0,len(templisti)-1)]
