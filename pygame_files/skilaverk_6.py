@@ -112,7 +112,7 @@ a_skyldir = 2
 upphafsstig = 30
 skjoldur=5
 sprenging = 10
-print("þú ert með",upphafsstig)
+print("þú ert með",stig)
 while running:
 
     clock.tick(60)
@@ -135,8 +135,11 @@ while running:
         spilari.move(0, 2)
 
     if spilari.rect.colliderect(end_rect):
-        print("þú vannst með", stig)
-        raise SystemExit()
+        if stig <= 20:
+            print("þú vannst með", stig)
+            raise SystemExit()
+        else:
+            print("þú þarft að mist 20 stig til að vinna þú ert með", stig)
 
     """
     for sprengjur in sprengjulisti:
