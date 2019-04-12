@@ -48,7 +48,6 @@ class Spilari():
             if self.rect.colliderect(skyldir.rect):
                 print("þú náðir í skjöld")
                 print("sprengju vörninn kostar 5")
-                stig = upphafsstig-skjoldur
                 sprengju_vorn.remove(skyldir)
 
 
@@ -108,7 +107,7 @@ for row in maze:
 
 print("bláir eru skyldir og rauðir eru sprengjur")
 running = True
-stig = 0
+stig = 10
 skyldir = 1
 upphafsstig = 30
 skjoldur=5
@@ -150,7 +149,7 @@ while running:
             #skyldir =skyldir- skyldir
             if skyldir>=1:
                 print("þú fékkst 10 stig")
-                stig =upphafsstig +sprenging
+                stig +=sprenging
                 sprengjulisti.remove(sprengja)
             else:
                 print("þú dóst")
@@ -158,6 +157,8 @@ while running:
         for skyldir in sprengju_vorn:
             if spilari.rect.colliderect(skyldir):
                 skyldir+= 1
+                stig-=skjoldur
+
 
     screen.fill((255,255,255))
     for kassi in veggir:#litar veggina
