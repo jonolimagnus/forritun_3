@@ -108,7 +108,7 @@ for row in maze:
 print("bláir eru skyldir og rauðir eru sprengjur")
 running = True
 stig = 10
-skyldir = 1
+a_skyldir = 2
 upphafsstig = 30
 skjoldur=5
 sprenging = 10
@@ -147,7 +147,7 @@ while running:
 
         if spilari.rect.colliderect(sprengja.rect):
             #skyldir =skyldir- skyldir
-            if skyldir>=1:
+            if a_skyldir>=1:
                 print("þú fékkst 10 stig")
                 stig +=sprenging
                 sprengjulisti.remove(sprengja)
@@ -156,7 +156,7 @@ while running:
                 raise SystemExit()
         for skyldir in sprengju_vorn:
             if spilari.rect.colliderect(skyldir):
-                skyldir+= 1
+                a_skyldir+= 1
                 stig-=skjoldur
 
 
