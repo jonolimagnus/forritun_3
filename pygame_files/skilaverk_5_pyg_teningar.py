@@ -36,7 +36,6 @@ teljari = 0
 for x in range(6):#geri box fyrir collidepont
     rect_list.append(pygame.Rect(xid,30,100,100))
     xid+=130
-
 #sett í listann
 teningalisti.append(Teningur('ten/t1.jpg',30,30))
 teningalisti.append(Teningur('ten/t2.jpg',160,30))
@@ -65,7 +64,7 @@ screen.subsurface(info)
 screen.subsurface(info).blit(texti, (3, 20))#staðseting textans sett inn á takkan
 
 
-def stig(listi):#geri stiginn
+def stig1(listi):#geri stiginn
     stig = 0
     l=[]
     a=set(listi)#í a kermur hver ala bara einu sinni
@@ -111,12 +110,13 @@ while running:
             screen.subsurface(info).blit(texti, (3, 20))
 
             flag=True
-        if  takki.collidepoint(event.pos) and teljari <3:#ýttu á mig takkin
+        if  takki.collidepoint(event.pos) and teljari <3:#ýttu á mig takkin má bara ger 3 sinnum
             #rugla teningurm
             teljari +=1
             xhnit=30
             yhnit=30
             for x in range(6):
+                print(listi)
                 if x not in listi:#ef búið er að frysta tening þá á ekki að setja nýja tölu í stað
                     ten=templisti[random.randint(0,len(templisti)-1)]
                     teningalisti[x]=ten
@@ -124,20 +124,20 @@ while running:
             for ten in teningalisti:
                 screen.blit(ten.image, (xhnit,yhnit))#í stað ten.rect.x og y
                 xhnit+=130
-            if teljari ==3:
+            if teljari ==3: #ef búið er að ýtta þrisvar sinnum
                 listiten.clear()
                 for ten in teningalisti:
                     tala =int (ten.name[1])
                     listiten.append(tala)
                 print(listiten)
-                strengur=str(stig(listiten))
+                strengur=str(stig1(listiten))
                 texti = my_font.render(strengur, True, RED)
                 screen.subsurface(info).blit(texti, (3,60))
-                print(stig(listiten))
+                print(stig1(listiten))
 
-            for box in rect_list:
-                if box.collidepoint(event.pos):
-                    list.append(rect_list.index(box))
+        for box in rect_list:#frystingar á teningum
+            if box.collidepoint(event.pos):
+                listi.append(rect_list.index(box))#sett teninga í frystingu
 
                 """
         for box in teningalisti:

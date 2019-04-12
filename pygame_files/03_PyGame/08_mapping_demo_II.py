@@ -95,7 +95,7 @@ maze = [
 "W     W   W   W W  W",
 "WWW   W   WWWWW W  W",
 "W W   S  WW     S  W",
-"W W   WWWW   WWW   W",
+"W W   WWWW M WWW   W",
 "W     SW   E   W   W",
 "WWWWWWWWWWWWWWWWWWWW",
 ]
