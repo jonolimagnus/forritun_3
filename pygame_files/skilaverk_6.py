@@ -77,7 +77,7 @@ maze = [
 "W              S S                WWWWW",
 "W      WWWW WWWWWWWWWWWW         WWWWWW",
 "W             WW                      W",
-"WWWWWWWWWWW    WW           WWWWW    W",
+"WWWWWWWWWWW    WW           WWWWW     W",
 "W               WWW        W          W",
 "W                 WWW    WW  WWWWWWWWWW",
 "WWWWWWWWW              WW             W",
@@ -85,7 +85,7 @@ maze = [
 "W        WWWWWWWWWWW    S      WWWWWWWW",
 "W                 WWWWWWW             W",
 "WWWWW       WWW            V  WWWWWWWWW",
-"W V      WWW       S            S    EW",
+"W V      WWW       S          V S    EW",
 "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
 ]
 x = 0
