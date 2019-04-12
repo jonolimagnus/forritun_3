@@ -108,6 +108,7 @@ for row in maze:
 
 print("bláir eru skyldir og rauðir eru sprengjur")
 running = True
+stig = 0
 skyldir = 1
 upphafsstig = 30
 skjoldur=5
@@ -135,7 +136,7 @@ while running:
         spilari.move(0, 2)
 
     if spilari.rect.colliderect(end_rect):
-        print("þú vannst")
+        print("þú vannst með", stig)
         raise SystemExit()
 
     """
