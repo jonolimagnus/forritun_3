@@ -44,10 +44,13 @@ class Spilari():
                     self.rect.bottom = kassi.rect.top
                 if dy < 0: # Moving up; Hit the bottom side of the wall
                     self.rect.top = kassi.rect.bottom
-        for skyldir in sprengju_vorn:
+        for skyldir in sprengju_vorn:#ef það er hitt á sprengju vörn þá er hún tekinn af kortinu
             if self.rect.colliderect(skyldir.rect):
                 print("þú náðir í skjöld")
+                print("sprengju vörninn kostar 5")
+                stig = upphafsstig-skjoldur
                 sprengju_vorn.remove(skyldir)
+
 
 pygame.display.set_caption("komdu þér út")
 screen = pygame.display.set_mode((640, 480))
@@ -60,30 +63,30 @@ sprengjulisti=[]
 #mazeið v = skyldir s = sprengjur w = veggir E = exit,
 maze = [
 "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
-"W            V                        W",
-"W     W    WWWWWW                     W",
-"W   WWWWS      W                      W",
-"W   W        WWWW                     W",
-"WSWWW  WWWW     S                     W",
-"W   W     W W                         W",
-"W   W    VW   WWW                    WW",
+"W            V               WWWW   S W",
+"W     W    WWWWWWWWWWWWW           WWWW",
+"W   WWWWS       S        W            W",
+"W   W        WWWWWWWWWWWW        WW VWW",
+"WSWWW  WWWW     S                 WWWWW",
+"W   W     W W                 WWWW    W",
+"W   W    VW   WWW       WWWWWW       WW",
 "W   WWW WWW   W W                     W",
 "W        W   W   WWW                  W",
 "WWW      W   WWWWW W                  W",
 "W W      V  WW                     S  W",
 "W W    WWWW W WWW                   WWW",
-"W              S S                    W",
-"W                                     W",
-"W                                     W",
-"W                                     W",
-"W                                     W",
-"W                                     W",
-"W                                     W",
-"W                                     W",
-"W                                     W",
+"W              S S                WWWWW",
+"W      WWWW WWWWWWWWWWWW         WWWWWW",
+"W             WW                      W",
+"WWWWWWWWWWW    WW           WWWWW    W",
+"W               WWW        W          W",
+"W                 WWW    WW  WWWWWWWWWW",
+"WWWWWWWWW              WW             W",
+"W                     WWWW   V        W",
+"W        WWWWWWWWWWW    S      WWWWWWWW",
 "W                 WWWWWWW             W",
-"WWWWW       WWW                     WWW",
-"W V      WWW                         EW",
+"WWWWW       WWW            V  WWWWWWWWW",
+"W V      WWW       S            S    EW",
 "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
 ]
 x = 0
@@ -103,8 +106,15 @@ for row in maze:
     y+=16
     x=0
 
+print("bláir eru skyldir og rauðir eru sprengjur")
 running = True
+skyldir = 1
+upphafsstig = 30
+skjoldur=5
+sprenging = 10
+print("þú ert með",upphafsstig)
 while running:
+
     clock.tick(60)
 
     for e in pygame.event.get():
@@ -127,7 +137,7 @@ while running:
     if spilari.rect.colliderect(end_rect):
         print("þú vannst")
         raise SystemExit()
-    skjoldur=0
+
     """
     for sprengjur in sprengjulisti:
         if spilari.rect.colliderect(sprengjur.rect):
@@ -136,12 +146,17 @@ while running:
     for sprengja in sprengjulisti:
 
         if spilari.rect.colliderect(sprengja.rect):
-            if skjoldur>=1:
-                print("þú fékkst stig")
+            #skyldir =skyldir- skyldir
+            if skyldir>=1:
+                print("þú fékkst 10 stig")
+                stig =upphafsstig +sprenging
                 sprengjulisti.remove(sprengja)
             else:
                 print("þú dóst")
                 raise SystemExit()
+        for skyldir in sprengju_vorn:
+            if spilari.rect.colliderect(skyldir):
+                skyldir+= 1
 
     screen.fill((255,255,255))
     for kassi in veggir:#litar veggina
