@@ -5,6 +5,14 @@ import pygame
 
 pygame.init()
 
+#litir
+black=(0,0,0)
+blue=(0,0, 255)
+green=(0,128,0)
+red=(255,0,0)
+white=(255,255,255)
+yellow=(255,255,0)
+
 """
 class Veggur(object):#geri veggina
     def __init__(self,pos):
@@ -16,6 +24,7 @@ class Geimskip(pygame.sprite.Sprite):# geri geimskip
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
         self.img = pygame.image.load("03_pygame/images/spaceship.png").convert()#sett inn mynd fyrir geimskipi
+        self.img.set_colorkey(white)#make white transparant
         self.rect = self.img.get_rect()
     def move(self):
         """
