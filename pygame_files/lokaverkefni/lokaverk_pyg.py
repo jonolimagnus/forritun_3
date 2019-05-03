@@ -136,8 +136,8 @@ class Mob(pygame.sprite.Sprite):
             #ignore
             # Create a new image based on the original using the new rotation value (degrees)
             #new_image = pygame.transform.rotate(self.image_orig, self.rotation)
-            # Update rect with rotation
 
+            # Update rect with rotation
             old_center = self.rect.center
             # Update mob
             #and ignore
@@ -245,6 +245,11 @@ expl_sounds = [pygame.mixer.Sound(os.path.join(snd_dir, snd_name)) for snd_name 
 # Background music
 pygame.mixer.music.load(os.path.join(snd_dir, "background.ogg"))
 
+#bý til grupurnar
+sprites = pygame.sprite.Group()
+mobs = pygame.sprite.Group()
+bullets = pygame.sprite.Group()
+player = Player()
 
 # Game loop
 game_over = True
