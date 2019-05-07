@@ -14,6 +14,7 @@ FPS = 60
 # Colors
 #hér getur þú breytt litunum á stöfunum svart er t.d 0,0,0
 WHITE = (255, 255, 255)
+BLACK = (0,0,0)
 
 # Keybindings
 LEFT = pygame.K_LEFT
@@ -27,12 +28,14 @@ KULU_HRADI = 5  # hér þarftu að breyta hraðanum á skotunum  t.d 5 er hæfil
 FONT_NAME = pygame.font.match_font("Arial","bold")
 
 """
-# Directory containing game files
+
 
 img_dir = os.path.join(game_dir, "img")
 
 """
+# Directory containing game files
 game_dir = os.path.dirname(__file__)
+img_dir =  os.path.join(game_dir, "space_img")
 snd_dir = os.path.join(game_dir, "snd")
 
 # Game init
@@ -58,9 +61,10 @@ class Player(pygame.sprite.Sprite):
     """Sprite for player"""
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
-        self.img = pygame.image.load("space_img/spaceship.jpg").convert()#sett inn mynd fyrir geimskipi
-        self.img.set_colorkey(WHITE)#make white transparant
-        self.rect = self.img.get_rect()
+        self.image = pygame.transform.scale(spaceship_img, (61, 80))
+        #self.img = pygame.image.load("space_img/spaceship.jpg").convert()#sett inn mynd fyrir geimskipi
+        self.image.set_colorkey(WHITE)#make white transparant virkar ekki
+        self.rect = self.image.get_rect()
         self.radius = 31  # Hitbox radius
         self.rect.center = (WIDTH / 2, HEIGHT / 2)
         self.rect.bottom = HEIGHT
@@ -108,8 +112,9 @@ class Mob(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
         # bý til mynd fyrir geimverurna
-        self.img = pygame.image.load("space_img/alien.png").convert()#sett inn mynd fyrir geimverur
-        self.img.set_colorkey(WHITE)#make white transparant
+        self.img = pygame.transform.scale(mob_images, (28,60)).convert()#sett inn mynd fyrir geimverur
+        self.img.set_colorkey(BLACK)#make black transparant virkar ekki
+        self.image = self.img.copy()  # Copy image to improve performance of rotation
         self.rect = self.img.get_rect()
         """
         self.image_orig = pygame.transform.scale(random.choice(mob_images), (28, 60))
@@ -163,9 +168,9 @@ class Bullet(pygame.sprite.Sprite):
     """Bullets shot by the player"""
     def __init__(self, x, y):
         pygame.sprite.Sprite.__init__(self)
-        self.img = pygame.image.load("space_img/missile.png").convert()#set in mynd fyrir skotinn
-        self.img.set_colorkey(WHITE)#make white transparant
-        self.rect = self.img.get_rect()
+        self.image = pygame.transform.scale(bullet_img, (15, 28)).convert()#set in mynd fyrir skotinn
+        self.image.set_colorkey(WHITE)#make white transparant
+        self.rect = self.image.get_rect()
         """
         self.image = pygame.transform.scale(bullet_img, (15, 28))
         self.rect = self.image.get_rect()
@@ -221,21 +226,24 @@ def show_game_over():
                 if key_pressed:
                     waiting = False
 
+#ignore
+#mob_list = ["mob.png", "mob1.png"]
+# #ignore background = pygame.image.load(os.path.join(img_dir, "background.jpg")).convert()# hér getur þú skipt um bakgrunnsmynd nafnið
 
 # Load all graphics
 # Background
-background = pygame.image.load("space_img/space.jpg")
- #ignore background = pygame.image.load(os.path.join(img_dir, "background.jpg")).convert()# hér getur þú skipt um bakgrunnsmynd nafnið
+background = pygame.image.load(os.path.join(img_dir, "space.jpg"))
 background = pygame.transform.scale(background, (WIDTH, HEIGHT))
 background_rect = background.get_rect()
-# Player
-player_img = pygame.image.load("space_img/spaceship.jpg").convert_alpha()
-# Mobs
-#ignore
-#mob_list = ["mob.png", "mob1.png"]
-mob_images = pygame.image.load("space_img/alien.png").convert_alpha()
+# Player spaceship
+spaceship_img = pygame.image.load(os.path.join(img_dir, "spaceship.jpg")).convert_alpha()
+spaceship_rect = spaceship_img.get_rect()
+# aliens
+mob_images = pygame.image.load(os.path.join(img_dir,"alien.png")).convert_alpha()
+mob_rect = mob_images.get_rect()
 # Bullet
-bullet_img = pygame.image.load("space_img/missile.png").convert_alpha()
+bullet_img = pygame.image.load(os.path.join(img_dir, "missile.png")).convert_alpha()
+bullet_rect = bullet_img.get_rect
 
 # Load all sounds
 
@@ -245,11 +253,13 @@ expl_sounds = [pygame.mixer.Sound(os.path.join(snd_dir, snd_name)) for snd_name 
 # Background music
 pygame.mixer.music.load(os.path.join(snd_dir, "background.ogg"))
 
-#bý til grupurnar
+#bý til grupurnar virkar ekki nema þær séu hér
 sprites = pygame.sprite.Group()
 mobs = pygame.sprite.Group()
 bullets = pygame.sprite.Group()
 player = Player()
+sprites.add(player)
+score = 0
 
 # Game loop
 game_over = True
@@ -314,6 +324,8 @@ while running:
 
     # Render
     screen.blit(background, background_rect)
+    #screen.blit(spaceship_img, spaceship_rect)
+
     sprites.draw(screen)
     # Draw score on top
     draw_text(screen, str(score), 24, WIDTH / 2, 10)
