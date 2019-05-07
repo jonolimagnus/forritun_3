@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="888b7585-8bfc-4bef-9dc0-312d8647a0ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/TIMAVERKEFNI_1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/skil_2_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/undirbuningur_i_timaverk1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/æfing_2C_try_excpect_time.py" afterDir="false" />
       <change beforePath="H:/.bash_history" beforeDir="false" afterPath="H:/.bash_history" afterDir="false" />
       <change beforePath="H:/README.md" beforeDir="false" afterPath="H:/README.md" afterDir="false" />
       <change beforePath="H:/firrtun 1/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="H:/firrtun 1/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
@@ -14,13 +10,7 @@
       <change beforePath="H:/firrtun 1/.idea/workspace.xml" beforeDir="false" afterPath="H:/firrtun 1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="H:/forittun 2/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="H:/forittun 2/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="H:/forittun 2/.idea/workspace.xml" beforeDir="false" afterPath="H:/forittun 2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/forritun 3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/forritun 3.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pygame_files/lokaverkefni/lokaverk_pyg.py" beforeDir="false" afterPath="$PROJECT_DIR$/pygame_files/lokaverkefni/lokaverk_pyg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pygame_files/lokaverkefni/space_img/Thumbs.db" beforeDir="false" afterPath="$PROJECT_DIR$/pygame_files/lokaverkefni/space_img/Thumbs.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test.txt" afterDir="false" />
       <change beforePath="H:/gagnasöfn_2/VERK_1.sql" beforeDir="false" afterPath="H:/gagnasöfn_2/VERK_1.sql" afterDir="false" />
       <change beforePath="H:/vefhönnun/vsh3/hello_flask/.vscode/settings.json" beforeDir="false" afterPath="H:/vefhönnun/vsh3/hello_flask/.vscode/settings.json" afterDir="false" />
       <change beforePath="H:/vefhönnun/vsh3/hello_flask/env/Scripts/Activate.ps1" beforeDir="false" />
@@ -131,7 +121,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="25" />
-          <entry key="py" value="49090" />
+          <entry key="py" value="51491" />
           <entry key="pyi" value="1287" />
           <entry key="txt" value="1" />
         </counts>
@@ -139,7 +129,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="26" />
-          <entry key="Python" value="49090" />
+          <entry key="Python" value="51491" />
           <entry key="PythonStub" value="1287" />
         </counts>
       </usages-collector>
@@ -150,11 +140,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pygame_files/lokaverkefni/lokaverk_pyg.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2190">
-              <caret line="238" column="89" lean-forward="true" selection-start-line="238" selection-start-column="89" selection-end-line="238" selection-end-column="89" />
+            <state relative-caret-position="570">
+              <caret line="325" column="57" selection-start-line="325" selection-start-column="57" selection-end-line="325" selection-end-column="57" />
               <folding>
                 <element signature="e#27#40#0" expanded="true" />
-                <marker date="1557219800689" expanded="true" signature="16014:16023" ph="..." />
+                <marker date="1557222092269" expanded="true" signature="17899:17908" ph="..." />
               </folding>
             </state>
           </provider>
@@ -172,8 +162,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/Downloads/lokaverkefni_RAM (1) (1)/lokaverkefni_RAM/lokaverkefni.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-285">
-              <caret line="229" selection-start-line="229" selection-end-line="229" />
+            <state relative-caret-position="293">
+              <caret line="246" column="25" lean-forward="true" selection-start-line="246" selection-start-column="25" selection-end-line="246" selection-end-column="25" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -185,7 +175,7 @@
         <entry file="file://$PROJECT_DIR$/pygame_files/Space_Invaders-master/Space_Invaders-master/spaceinvaders.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="5321">
-              <caret line="316" lean-forward="true" selection-start-line="316" selection-end-line="316" />
+              <caret line="316" selection-start-line="316" selection-end-line="316" />
               <folding>
                 <element signature="e#67#87#0" expanded="true" />
               </folding>
@@ -701,7 +691,7 @@
     <entry file="file://$PROJECT_DIR$/pygame_files/Space_Invaders-master/Space_Invaders-master/spaceinvaders.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5321">
-          <caret line="316" lean-forward="true" selection-start-line="316" selection-end-line="316" />
+          <caret line="316" selection-start-line="316" selection-end-line="316" />
           <folding>
             <element signature="e#67#87#0" expanded="true" />
           </folding>
@@ -748,8 +738,8 @@
     </entry>
     <entry file="file://$USER_HOME$/Downloads/lokaverkefni_RAM (1) (1)/lokaverkefni_RAM/lokaverkefni.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-285">
-          <caret line="229" selection-start-line="229" selection-end-line="229" />
+        <state relative-caret-position="293">
+          <caret line="246" column="25" lean-forward="true" selection-start-line="246" selection-start-column="25" selection-end-line="246" selection-end-column="25" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
@@ -758,11 +748,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pygame_files/lokaverkefni/lokaverk_pyg.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2190">
-          <caret line="238" column="89" lean-forward="true" selection-start-line="238" selection-start-column="89" selection-end-line="238" selection-end-column="89" />
+        <state relative-caret-position="570">
+          <caret line="325" column="57" selection-start-line="325" selection-start-column="57" selection-end-line="325" selection-end-column="57" />
           <folding>
             <element signature="e#27#40#0" expanded="true" />
-            <marker date="1557219800689" expanded="true" signature="16014:16023" ph="..." />
+            <marker date="1557222092269" expanded="true" signature="17899:17908" ph="..." />
           </folding>
         </state>
       </provider>

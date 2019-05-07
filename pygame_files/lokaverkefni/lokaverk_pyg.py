@@ -35,8 +35,8 @@ img_dir = os.path.join(game_dir, "img")
 """
 # Directory containing game files
 game_dir = os.path.dirname(__file__)
-img_dir =  os.path.join(game_dir, "space_img")
-snd_dir = os.path.join(game_dir, "snd")
+img_dir =  os.path.join(game_dir, "space_img")# set myndirna
+snd_dir = os.path.join(game_dir, "snd")#set hljóðið
 
 # Game init
 pygame.init()
@@ -61,14 +61,14 @@ class Player(pygame.sprite.Sprite):
     """Sprite for player"""
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.transform.scale(spaceship_img, (61, 80))
+        self.image = pygame.transform.scale(spaceship_img, (61, 80))#bý til geimskipið og set myndina í og stærð
         #self.img = pygame.image.load("space_img/spaceship.jpg").convert()#sett inn mynd fyrir geimskipi
         self.image.set_colorkey(WHITE)#make white transparant virkar ekki
         self.rect = self.image.get_rect()
         self.radius = 31  # Hitbox radius
         self.rect.center = (WIDTH / 2, HEIGHT / 2)
         self.rect.bottom = HEIGHT
-        self.x_speed = LEIKMADUR_HRADI
+        self.x_speed = LEIKMADUR_HRADI#set hraðan
         # Automatic fire (while holding FIRE button)
         self.fire_delay = 150  # Delay in ms to wait between shots
         self.last_fired = pygame.time.get_ticks()
@@ -80,18 +80,18 @@ class Player(pygame.sprite.Sprite):
         # Change speed based on user input
         keystate = pygame.key.get_pressed()
         if keystate[LEFT]:
-            self.x_speed = -LEIKMADUR_HRADI
+            self.x_speed = -LEIKMADUR_HRADI#ferð til vinstri
         if keystate[RIGHT]:
-            self.x_speed = LEIKMADUR_HRADI
+            self.x_speed = LEIKMADUR_HRADI#ferð til hægri
         if keystate[FIRE]:
-            self.fire()
+            self.fire()#notar spacebar til að skjóta getur haldið honum inni
 
         # Move player horizontally according to speed
         self.rect.x += self.x_speed
 
         # Constrain player within screen
         if self.rect.left < 0:
-            self.rect.left = 0
+            self.rect.left = 0#getur ekki farið af skjánum
         if self.rect.right > WIDTH:
             self.rect.right = WIDTH
 
@@ -102,9 +102,9 @@ class Player(pygame.sprite.Sprite):
             self.last_fired = now
             # Create a new bullet, add it to sprites and play fire sound
             bullet = Bullet(self.rect.centerx, self.rect.top)
-            sprites.add(bullet)
-            bullets.add(bullet)
-            fire_sound.play()
+            sprites.add(bullet)#sit skotinn í sprite
+            bullets.add(bullet)#sit skotinn í grúpuna
+            fire_sound.play()#kemur hljíoð í hvert skipti sem það er skotið
 
 
 class Mob(pygame.sprite.Sprite):
@@ -122,19 +122,19 @@ class Mob(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         """
         # Mobs start at random positions off screen
-        self.rect.x = random.randint(0, WIDTH - self.rect.width)
-        self.rect.y = random.randint(-100, -40)
-        # Mobs have differing speeds
-        self.y_speed = random.randint(1, 8)
-        self.x_speed = random.randint(-3, 3)
-        # Mobs rotate at varying speeds
+        self.rect.x = random.randint(0, WIDTH - self.rect.width)#er x staðsetninginn þeira
+        self.rect.y = random.randint(-100, -40)#eru y staðsetninginn þeira
+        # þeir eru með random hraða frá 1-8 í x og -3til 3 í y getur verið miss erfit
+        self.y_speed = random.randint(1, 8)#hraði þeira lárétt
+        self.x_speed = random.randint(-3, 3)#hraði þeirra lóðrétt
+        # Mobs rotate at varying speeds þetta gildir ekki hér
         self.rotation = 0
         self.rotation_speed = random.randint(-8, 8)
         self.last_rotated = pygame.time.get_ticks()
 
     def rotate(self):
         now = pygame.time.get_ticks()
-        # Rotate mob every 50 ticks
+        # Rotate mob every 50 ticks gildir ekki fyrir myndirnar sem ég er með
         if now - self.last_rotated > 50:
             self.last_rotated = now
             self.rotation = (self.rotation + self.rotation_speed) % 360
@@ -154,14 +154,14 @@ class Mob(pygame.sprite.Sprite):
     def update(self):
         self.rotate()
         # Move mobs according to speed
-        self.rect.x += self.x_speed
-        self.rect.y += self.y_speed
+        self.rect.x += self.x_speed# færir geimverurnar í x átt
+        self.rect.y += self.y_speed# og y átt
         # If enemy goes off the bottom or the sides, push it to the top
-        if self.rect.top > HEIGHT + 10 or self.rect.left < -60 or self.rect.right > WIDTH + 60:
-            self.rect.x = random.randint(0, WIDTH - self.rect.width)
+        if self.rect.top > HEIGHT + 10 or self.rect.left < -60 or self.rect.right > WIDTH + 60:#þer eru setir sjálfkrafa á toppin af skjánum og koma aftur ef þeir fara niður á borninn á sjánum
+            self.rect.x = random.randint(0, WIDTH - self.rect.width)#er með random hraða en er ekki alveg viss hvað þetta gerir tbh
             # Mobs start at varying distances off-screen, with random vertical speeds
-            self.rect.y = random.randint(-100, -40)
-            self.y_speed = random.randint(1, 8)
+            self.rect.y = random.randint(-100, -40)#þetta settur geimverurnar aff skjánum þar sem þær byrja svo koma þær
+            self.y_speed = random.randint(1, 8)#er með random hraða
 
 
 class Bullet(pygame.sprite.Sprite):
@@ -176,15 +176,15 @@ class Bullet(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         """
         # x and y are the coordinates of the player, passed as arguments
-        self.rect.bottom = y
-        self.rect.centerx = x
-        self.y_speed = -KULU_HRADI
+        self.rect.bottom = y#set x staðsetningu myðað við leikamninn
+        self.rect.centerx = x#set y staðsetningu
+        self.y_speed = -KULU_HRADI#set hraða kúlunar
 
     def update(self):
-        self.rect.y += self.y_speed
+        self.rect.y += self.y_speed#hraði kúlurnar
         # If bullet goes off screen, henni er eytt
         if self.rect.bottom < 0:
-            self.kill()
+            self.kill()#henni er eytt
 
 
 def show_game_over():
@@ -194,19 +194,19 @@ def show_game_over():
     pygame.mixer.music.stop()
     # Draw text to screen
     # Game title
-    draw_text(screen, "innrásar herinn", 64, WIDTH / 2, HEIGHT / 5)# milli gæsa lappanna þarftu að setja inn nafn leiksins t.d Pizzu innrásarher
+    draw_text(screen, "innrásar herinn", 64, WIDTH / 2, HEIGHT / 5)# sett inn nafn á leiknum sem kemur upp á byrjunar skjánum
     # Controls
-    draw_text(screen, "Hreyfing:Örva takkar", 28, WIDTH / 2, HEIGHT * 2 / 5)# hér þarftu að setja inn texta t.d Hreyfing:Örva takkar
-    draw_text(screen, "Skot: Bilstöng(space) ", 28, WIDTH / 2, HEIGHT / 2)
-    draw_text(screen, "Hætta: Lausnarhnappur(escape)", 28, WIDTH / 2, HEIGHT * 3 / 5)
+    draw_text(screen, "Hreyfing:Örva takkar", 28, WIDTH / 2, HEIGHT * 2 / 5)# þetta kemur líka upp á byrjunar skjánum og seigir hvernig þú hreyfir karakterinn
+    draw_text(screen, "Skot: Bilstöng(space) ", 28, WIDTH / 2, HEIGHT / 2)#sigir þér hvernig þú átt að skjóta
+    draw_text(screen, "Hætta: Lausnarhnappur(escape)", 28, WIDTH / 2, HEIGHT * 3 / 5)#og segir þér að þú getur hætt með escape
     # Instructions to start
-    draw_text(screen, "Veldu hvaða takka sem er til að byrja!", 28, WIDTH / 2, HEIGHT * 3 / 4)
+    draw_text(screen, "Veldu hvaða takka sem er til að byrja!", 28, WIDTH / 2, HEIGHT * 3 / 4)#og hvernig þú byrjar leikinn
     # Flip display
     pygame.display.flip()
 
     # Wait for user input
-    waiting = True
-    key_pressed = False
+    waiting = True#býður eftir þér
+    key_pressed = False#þannga til þetta verður True ie. þegar þú ýtir á taka
 
     while waiting:
         clock.tick(FPS)
@@ -220,11 +220,11 @@ def show_game_over():
             if event.type == pygame.KEYDOWN:
                 # If user presses the QUIT key, quit the game
                 if event.key == QUIT:
-                    pygame.quit()
+                    pygame.quit()#ef þú ýtir á escape hættiru í leiknum
                 key_pressed = True
             if event.type == pygame.KEYUP:
                 if key_pressed:
-                    waiting = False
+                    waiting = False#takanum þarf að vera sleppt til að byrja leikinn
 
 #ignore
 #mob_list = ["mob.png", "mob1.png"]
@@ -232,34 +232,34 @@ def show_game_over():
 
 # Load all graphics
 # Background
-background = pygame.image.load(os.path.join(img_dir, "space.jpg"))
-background = pygame.transform.scale(background, (WIDTH, HEIGHT))
-background_rect = background.get_rect()
+background = pygame.image.load(os.path.join(img_dir, "space.jpg"))#sett myndinna af bakgurninum
+background = pygame.transform.scale(background, (WIDTH, HEIGHT))#sit scaleið af bakgruninum
+background_rect = background.get_rect()#bý til rect fyrir bakgruninn
 # Player spaceship
-spaceship_img = pygame.image.load(os.path.join(img_dir, "spaceship.jpg")).convert_alpha()
-spaceship_rect = spaceship_img.get_rect()
+spaceship_img = pygame.image.load(os.path.join(img_dir, "spaceship.jpg")).convert_alpha()#bý til mynd fyrir spilarann virkar ekki nema með os path join
+spaceship_rect = spaceship_img.get_rect()#ekki mikilvægt hélt ég þrufti þetta en var ekki viss
 # aliens
-mob_images = pygame.image.load(os.path.join(img_dir,"alien.png")).convert_alpha()
-mob_rect = mob_images.get_rect()
+mob_images = pygame.image.load(os.path.join(img_dir,"alien.png")).convert_alpha()#bý til mynd fyrir geimverurnar
+mob_rect = mob_images.get_rect()#ekki mikilvægt
 # Bullet
-bullet_img = pygame.image.load(os.path.join(img_dir, "missile.png")).convert_alpha()
-bullet_rect = bullet_img.get_rect
+bullet_img = pygame.image.load(os.path.join(img_dir, "missile.png")).convert_alpha()#bý til mynd fyrir skotinn
+bullet_rect = bullet_img.get_rect#en og aftur ekki mikilvægt
 
 # Load all sounds
 
-fire_sound = pygame.mixer.Sound(os.path.join(snd_dir, "fire.wav"))
-expl_list = ["expl0.wav", "expl1.wav"]
-expl_sounds = [pygame.mixer.Sound(os.path.join(snd_dir, snd_name)) for snd_name in expl_list]
+fire_sound = pygame.mixer.Sound(os.path.join(snd_dir, "fire.wav"))#bý til hljóð firir skotinn
+expl_list = ["expl0.wav", "expl1.wav"]#bý til lista fyrir sprengjurnar
+expl_sounds = [pygame.mixer.Sound(os.path.join(snd_dir, snd_name)) for snd_name in expl_list]#tekur úr listanum með sprengju hljóðinn og velur af random
 # Background music
-pygame.mixer.music.load(os.path.join(snd_dir, "background.ogg"))
+pygame.mixer.music.load(os.path.join(snd_dir, "background.ogg"))#virkar ekki á að vera bakkgruns hlóðið
 
-#bý til grupurnar virkar ekki nema þær séu hér
-sprites = pygame.sprite.Group()
-mobs = pygame.sprite.Group()
-bullets = pygame.sprite.Group()
-player = Player()
-sprites.add(player)
-score = 0
+#bý til grúpurnar virkar ekki nema þær séu hér
+sprites = pygame.sprite.Group()#fyrir sprites
+mobs = pygame.sprite.Group()#fyrir geimverurna
+bullets = pygame.sprite.Group()#fyrir skotinn
+player = Player()#bý til spilaran
+sprites.add(player)#sett spilarann í sprite grúpuna
+score = 0#geri scorið
 
 # Game loop
 game_over = True
@@ -301,7 +301,7 @@ while running:
         elif event.type == pygame.KEYDOWN:
             # End game (go to game over) if user hits the QUIT key
             if event.key == QUIT:
-                game_over = True
+                game_over = True#þegar þú tapar
 
     # Update
     sprites.update()
@@ -309,26 +309,26 @@ while running:
     # Check for bullet collisions with mobs
     hits = pygame.sprite.groupcollide(mobs, bullets, True, True)  # Kill both mob and bullet if they collide
     # If a mob is killed, add to score and spawn a new mob
-    for hit in hits:
+    for hit in hits:# í hvert skipti sem þú hitir óvinina færðu eitt stig
         score += 1  # 1 kill = 1 pt
-        m = Mob()
-        sprites.add(m)
-        mobs.add(m)
+        m = Mob()#bý til geimverur
+        sprites.add(m)# sit mobana í sprite
+        mobs.add(m)#sit mobana í grúpuna
         random.choice(expl_sounds).play()  # Play one of the explosion sounds
 
     # Check for mob collisions with player
     hits = pygame.sprite.spritecollide(player, mobs, False, pygame.sprite.collide_circle)
     # If player is hit by mob, player dies and game ends
     if hits:
-        game_over = True
+        game_over = True#ert dauður
 
     # Render
-    screen.blit(background, background_rect)
+    screen.blit(background, background_rect)#bakgrunurinn
     #screen.blit(spaceship_img, spaceship_rect)
 
     sprites.draw(screen)
     # Draw score on top
-    draw_text(screen, str(score), 24, WIDTH / 2, 10)
+    draw_text(screen, str(score), 24, WIDTH / 2, 10)#set scorið á toppinn
     # Flip display
     pygame.display.flip()
 
